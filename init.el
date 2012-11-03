@@ -1,6 +1,6 @@
 ;; https://github.com/technomancy/swank-clojure
 ;; 
-;; (setenv "PATH" (shell-command-to-string "echo $PATH"))
+(setenv "PATH" (shell-command-to-string "source $HOME/.bashrc && printf $PATH"))
 
 (require 'package)
 (add-to-list 'package-archives
@@ -12,6 +12,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(exec-path (quote ("~/bin" "/usr/bin" "/bin" "/usr/sbin" "/sbin" "/Applications/Emacs.app/Contents/MacOS/bin")))
  '(ns-command-modifier (quote meta)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
@@ -19,3 +20,6 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
+
+(set-face-attribute 'default nil :height 130)
+(load-theme 'zenburn t)
