@@ -23,3 +23,12 @@
 
 (set-face-attribute 'default nil :height 130)
 (load-theme 'zenburn t)
+
+;; nrepl
+(add-hook 'nrepl-interaction-mode-hook 'nrepl-turn-on-eldoc-mode)
+
+;; Stop the error buffer from popping up while working in the REPL buffer
+(setq nrepl-popup-stacktraces nil)
+
+;; Make C-c C-z switch to the *nrepl* buffer in the current window
+(add-to-list 'same-window-buffer-names "*nrepl*") 
